@@ -12,7 +12,7 @@ namespace design_pattern_project
     {
         public void print()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("file");
         }
     }
 }

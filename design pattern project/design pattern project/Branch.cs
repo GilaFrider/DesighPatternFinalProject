@@ -9,12 +9,12 @@ namespace design_pattern_project
 {
     public class Branch : IObject
     {
-        public IState _status { get; set; }
+        
         
         private List<IObject> _element = new List<IObject>();
         public Branch()
         {
-            _status = new Draft();
+            
         }
         public void Add(IObject c)
         {

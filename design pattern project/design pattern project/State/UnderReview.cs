@@ -13,9 +13,9 @@ namespace design_pattern_project.State
         {
             _prev = prev;
         }
-        public void ChangeStatus(Branch branch)
+        public void ChangeStatus(File file)
         {
-            branch._status = new ReadyToMerge("UnderReview");
+            file._status = new ReadyToMerge("UnderReview");
         }
 
         public void PrintStatus()

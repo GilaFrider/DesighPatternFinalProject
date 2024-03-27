@@ -8,7 +8,7 @@ namespace design_pattern_project.State
 {
     public interface IState
     {
-        public void ChangeStatus(Branch branch);
+        public void ChangeStatus(File file);
         public void PrintStatus();
     }
 }

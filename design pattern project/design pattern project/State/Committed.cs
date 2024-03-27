@@ -15,9 +15,9 @@ namespace design_pattern_project.State
             _prev = prev;
 
         }
-        public void ChangeStatus(Branch branch)
+        public void ChangeStatus(File file)
         {
-            branch._status = new UnderReview("Committed");
+            file._status = new UnderReview("Committed");
         }
 
         public void PrintStatus()

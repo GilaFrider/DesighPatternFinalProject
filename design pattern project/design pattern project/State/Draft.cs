@@ -10,9 +10,9 @@ namespace design_pattern_project.State
     {
 
 
-        public void ChangeStatus(Branch branch)
+        public void ChangeStatus(File file)
         {
-            branch._status = new Staged("Draft");
+            file._status = new Staged("Draft");
         }
 
         public void PrintStatus()
