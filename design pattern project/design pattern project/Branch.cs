@@ -32,5 +32,27 @@ namespace design_pattern_project
                 e.print();
             }
         }
+
+
+        public void Merge()
+        {
+            Console.WriteLine("merge");
+        }
+        public void Commit()
+        {
+            Console.WriteLine("commit");
+        }
+        public void Delete()
+        {
+            Console.WriteLine("delete");
+        }
+        public void Create()
+        {
+            Console.WriteLine("create");
+        }
+        public void Undo()
+        {
+            Console.WriteLine("undo");
+        }
     }
 }
