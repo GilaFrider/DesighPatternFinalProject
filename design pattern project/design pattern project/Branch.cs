@@ -11,26 +11,23 @@ namespace design_pattern_project
     {
         
         
-        private List<IObject> _element = new List<IObject>();
-        public Branch()
+        private List<IObject> _elements = new List<IObject>();
+
+        public void Add(IObject e)
         {
-            
-        }
-        public void Add(IObject c)
-        {
-            _element.Add(c);
+            _elements.Add(e);
         }
 
         public void Remove(IObject e)
         {
-            _element.Remove(e);
+            _elements.Remove(e);
         }
 
         public void print()
         {
 
             Console.WriteLine("Branch");
-            foreach (var e in _element)
+            foreach (var e in _elements)
             {
                 e.print();
             }

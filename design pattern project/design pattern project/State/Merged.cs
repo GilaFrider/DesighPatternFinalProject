@@ -14,7 +14,7 @@ namespace design_pattern_project.State
         {
             _prev = prev;
         }
-        public void ChangeStatus(File file)
+        public void ChangeStatus(MyFile file)
         {
             throw new NotImplementedException();
         }

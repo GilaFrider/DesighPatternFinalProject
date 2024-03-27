@@ -7,10 +7,10 @@ using design_pattern_project.State;
 
 namespace design_pattern_project
 {
-    public class File :IObject
+    public class MyFile :IObject
     {
         public IState _status { get; set; }
-        public File()
+        public MyFile()
         {
             _status = new Draft();
         }

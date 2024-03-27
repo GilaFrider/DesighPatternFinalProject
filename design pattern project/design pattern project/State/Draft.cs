@@ -10,7 +10,7 @@ namespace design_pattern_project.State
     {
 
 
-        public void ChangeStatus(File file)
+        public void ChangeStatus(MyFile file)
         {
             file._status = new Staged("Draft");
         }
