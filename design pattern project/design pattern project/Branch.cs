@@ -27,7 +27,10 @@ namespace design_pattern_project
         {
 
             Console.WriteLine("Branch");
+<<<<<<< HEAD
             
+=======
+>>>>>>> dcbae56da6bba50a9f66dd28cc0a1cce674b3486
 
             foreach (var e in _elements)
             {
