@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project.Clone
 {
-    internal interface IClone
+    public interface IClone
     {
+        public Branch CreateCloneBranch(Branch branch);
     }
 }

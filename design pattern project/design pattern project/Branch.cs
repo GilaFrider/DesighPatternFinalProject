@@ -1,4 +1,5 @@
-﻿using design_pattern_project.State;
+﻿using design_pattern_project.Clone;
+using design_pattern_project.State;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,17 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project
 {
-    public class Branch : IObject
+    public class Branch : IObject,IClone
     {
         
         
         private List<IObject> _elements = new List<IObject>();
+        public string Name { get; set; }
+        public Branch(string name)
+        {
+            Name = name;
+            
+        }
 
         public void Add(IObject e)
         {
@@ -27,10 +34,7 @@ namespace design_pattern_project
         {
 
             Console.WriteLine("Branch");
-<<<<<<< HEAD
-            
-=======
->>>>>>> dcbae56da6bba50a9f66dd28cc0a1cce674b3486
+
 
             foreach (var e in _elements)
             {
@@ -38,6 +42,19 @@ namespace design_pattern_project
             }
         }
 
+        public void requestToReview()
+        {
+            Console.WriteLine("Are you a collaborator? password--");
+            string ans = Console.ReadLine();
+            if (ans == "1234")
+            {
+                Console.WriteLine("review secceeded 👍");
+            }
+            else
+            {
+                Console.WriteLine("you have no access to review.");
+            }
+        }
 
         public void Merge()
         {
@@ -51,13 +68,18 @@ namespace design_pattern_project
         {
             Console.WriteLine("delete");
         }
-        public void Create()
+        public void CreateNewBranch()
         {
             Console.WriteLine("create");
         }
         public void Undo()
         {
             Console.WriteLine("undo");
+        }
+
+        public Branch CreateCloneBranch(Branch branch)
+        {
+            return new Branch(branch.Name);
         }
     }
 }
