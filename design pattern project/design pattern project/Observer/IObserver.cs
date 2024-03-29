@@ -8,6 +8,8 @@ namespace design_pattern_project.Observer
 {
     public interface IObserver
     {
-        public void requestToReview();
+        public void requestToReview(IReview review);
+
+
     }
 }

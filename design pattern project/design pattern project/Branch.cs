@@ -1,4 +1,5 @@
 ﻿using design_pattern_project.Clone;
+using design_pattern_project.Observer;
 using design_pattern_project.State;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project
 {
-    public class Branch : IObject,IClone
+    public class Branch : IObject,IClone,IReview
     {
         
         
@@ -80,6 +81,21 @@ namespace design_pattern_project
         public Branch CreateCloneBranch(Branch branch)
         {
             return new Branch(branch.Name);
+        }
+
+        public void Attach(IObserver observer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Detach(IObserver observer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Notify()
+        {
+            throw new NotImplementedException();
         }
     }
 }
