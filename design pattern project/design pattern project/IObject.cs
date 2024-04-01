@@ -10,6 +10,7 @@ namespace design_pattern_project
     public interface IObject
     {
         public void print();
+        public IObject clone();
         //public void Add(IObject e);
         //public void Remove(IObject e);
     }

@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project
 {
-    public class Branch : IObject, IClone, IObserver
+    public class Branch : IObject, IClone, IReview
     {
         
         
         private List<IObject> _elements = new List<IObject>();
+        private List<IObserver> _observer = new List<IObserver>();
         public string Name { get; set; }
         public Branch(string name)
         {
@@ -80,12 +81,38 @@ namespace design_pattern_project
 
         public Branch CreateCloneBranch(Branch branch)
         {
-            return new Branch(branch.Name);
+            Branch cloneBranch = new Branch(Name);
+            foreach (var e in _elements)
+            {
+                cloneBranch.Add(e.clone());
+            }
+            return cloneBranch;
         }
 
-        public void requestToReview(IReview review)
+        public IObject clone()
         {
-            Console.WriteLine("sssssssssssss");
+            return new Branch(Name);
+        }
+
+        public void Attach(IObserver observer)
+        {
+            Console.WriteLine("Attach observer");
+            _observer.Add(observer);
+        }
+
+        public void Detach(IObserver observer)
+        {
+            Console.WriteLine("Detach observer");
+            _observer.Remove(observer);
+
+        }
+
+        public void Notify()
+        {
+            foreach(var o in _observer)
+            {
+                o.requestToReview();
+            }
         }
     }
 }

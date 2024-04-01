@@ -11,6 +11,11 @@ namespace design_pattern_project
     public class Folder : IObject
     {
         private List<IObject> _elements = new List<IObject>();
+        public string Name { get; set; }
+        public Folder(string name)
+        {
+            Name = name;
+        }
         public void Add(IObject e)
         {
             if(e.GetType() == typeof(Branch))
@@ -32,6 +37,11 @@ namespace design_pattern_project
             {
                 e.print();
             }
+        }
+
+        public IObject clone()
+        {
+            return new Folder(Name);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace design_pattern_project.State
         }
         public void ChangeStatus(MyFile file)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Merged already.");
         }
 
         public void PrintStatus()

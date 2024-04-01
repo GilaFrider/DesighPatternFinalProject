@@ -52,5 +52,9 @@ namespace design_pattern_project
             }
         }
 
+        public IObject clone()
+        {
+            return new MyFile(Name);
+        }
     }
 }

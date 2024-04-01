@@ -6,21 +6,20 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project.Observer
 {
-    public class Review : IReview
+    public class Review : IObserver
     {
-        public void Attach(IObserver observer)
+        public void requestToReview()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Detach(IObserver observer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Notify()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("Are you a collaborator? password--");
+            string ans = Console.ReadLine();
+            if (ans == "1234")
+            {
+                Console.WriteLine("review secceeded 👍");
+            }
+            else
+            {
+                Console.WriteLine("you have no access to review.");
+            }
         }
     }
 }
