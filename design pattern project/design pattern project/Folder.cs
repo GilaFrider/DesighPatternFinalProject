@@ -13,7 +13,12 @@ namespace design_pattern_project
         private List<IObject> _elements = new List<IObject>();
         public void Add(IObject e)
         {
-            _elements.Add(e);
+            if(e.GetType() == typeof(Branch))
+            {
+                throw new Exception("Can't add branch to folder");
+            }
+  
+            else _elements.Add(e);
         }
 
         public void Remove(IObject e)

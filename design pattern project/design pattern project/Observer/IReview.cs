@@ -15,8 +15,5 @@ namespace design_pattern_project.Observer
 
             // Notify all observers about an event.
             void Notify();
-
-
-
     }
 }

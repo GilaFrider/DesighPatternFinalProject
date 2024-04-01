@@ -23,7 +23,7 @@ namespace design_pattern_project.Momento
             return File.Name;
         }
 
-        public MyFile GetFileState()
+        public MyFile GetFile()
         {
             return File;
         }

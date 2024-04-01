@@ -10,7 +10,7 @@ namespace design_pattern_project.Momento
     {
         public string GetFileName();
 
-        public MyFile GetFileState();
+        public MyFile GetFile();
         public DateTime GetFileDateTime();
     }
 }

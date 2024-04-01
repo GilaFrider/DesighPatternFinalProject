@@ -16,8 +16,8 @@ namespace design_pattern_project
         private Stack<IMomento> history  = new Stack<IMomento>();
         public MyFile(string name)
         {
-            this.Name = name;
-            this._status = new Draft();
+            Name = name;
+            _status = new Draft();
         }
         public  IMomento SaveHistory()
         {
@@ -25,10 +25,32 @@ namespace design_pattern_project
             history.Push(result);
             return result;
         }
+        
         public void print()
         {
             Console.WriteLine("file");
         }
-      
+        public void Undo()
+        {
+            if (history.Count == 0)
+            {
+                return;
+            }
+
+            var memento = history.Last();
+            history.Pop();
+
+            Console.WriteLine("Caretaker: Restoring state to: " + memento.GetFileName());
+        }
+        public void ShowHistory()
+        {
+            Console.WriteLine("Caretaker: Here's the list of mementos:");
+
+            foreach (var h in history)
+            {
+                Console.WriteLine(h.GetFileName());
+            }
+        }
+
     }
 }

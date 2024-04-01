@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project
 {
-    public class Branch : IObject,IClone,IReview
+    public class Branch : IObject, IClone, IObserver
     {
         
         
@@ -83,19 +83,9 @@ namespace design_pattern_project
             return new Branch(branch.Name);
         }
 
-        public void Attach(IObserver observer)
+        public void requestToReview(IReview review)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Detach(IObserver observer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Notify()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("sssssssssssss");
         }
     }
 }

@@ -18,6 +18,7 @@ namespace design_pattern_project.State
         public void ChangeStatus(MyFile file)
         {
             file._status = new UnderReview("Committed");
+            file.SaveHistory();
         }
 
         public void PrintStatus()
