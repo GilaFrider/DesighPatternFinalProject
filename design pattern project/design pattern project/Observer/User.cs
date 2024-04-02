@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project.Observer
 {
-    public class Review : IObserver
+    public class User : IObserver
     {
+        public string Password { get; set; }
+        public User(string password)
+        {
+
+            Password = password;
+
+        }
         public void requestToReview()
         {
-            Console.WriteLine("Are you a collaborator? password--");
-            string ans = Console.ReadLine();
-            if (ans == "1234")
+            if (Password == "1234")
             {
-                Console.WriteLine("review secceeded 👍");
+                Console.WriteLine("review secceeded!!!");
             }
             else
             {

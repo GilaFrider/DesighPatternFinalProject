@@ -1,4 +1,5 @@
-﻿using System;
+﻿using design_pattern_project.Observer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace design_pattern_project.State
     {
 
 
-        public void ChangeStatus(MyFile file)
+        public void ChangeStatus(MyFile file,User user)
         {
             file._status = new Staged("Draft");
         }

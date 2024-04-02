@@ -1,4 +1,4 @@
-﻿using design_pattern_project.Clone;
+﻿
 using design_pattern_project.Observer;
 using design_pattern_project.State;
 using System;
@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace design_pattern_project
 {
-    public class Branch : IObject, IClone, IReview
+    public class Branch : IObject
     {
         
         
         private List<IObject> _elements = new List<IObject>();
-        private List<IObserver> _observer = new List<IObserver>();
+        
         public string Name { get; set; }
         public Branch(string name)
         {
@@ -43,43 +43,38 @@ namespace design_pattern_project
                 e.print();
             }
         }
-
-        public void requestToReview()
-        {
-            Console.WriteLine("Are you a collaborator? password--");
-            string ans = Console.ReadLine();
-            if (ans == "1234")
-            {
-                Console.WriteLine("review secceeded 👍");
-            }
-            else
-            {
-                Console.WriteLine("you have no access to review.");
-            }
-        }
-
-        public void Merge()
+        public string Merge()
         {
             Console.WriteLine("merge");
+            return "merge";
         }
-        public void Commit()
+        public string Commit()
         {
             Console.WriteLine("commit");
+            return "commited";
         }
-        public void Delete()
+        public string Delete()
         {
             Console.WriteLine("delete");
+            return "delete";
         }
-        public void CreateNewBranch()
+        public string CreateNewBranch()
         {
             Console.WriteLine("create");
+            return "create";
         }
-        public void Undo()
+        public Branch CreateCloneBranch(Branch branch)
+        {
+            return (Branch) branch.clone();
+        }
+        public string Undo()
         {
             Console.WriteLine("undo");
+            return "undo";
         }
 
-        public Branch CreateCloneBranch(Branch branch)
+
+        public IObject clone()
         {
             Branch cloneBranch = new Branch(Name);
             foreach (var e in _elements)
@@ -89,30 +84,6 @@ namespace design_pattern_project
             return cloneBranch;
         }
 
-        public IObject clone()
-        {
-            return new Branch(Name);
-        }
-
-        public void Attach(IObserver observer)
-        {
-            Console.WriteLine("Attach observer");
-            _observer.Add(observer);
-        }
-
-        public void Detach(IObserver observer)
-        {
-            Console.WriteLine("Detach observer");
-            _observer.Remove(observer);
-
-        }
-
-        public void Notify()
-        {
-            foreach(var o in _observer)
-            {
-                o.requestToReview();
-            }
-        }
+        
     }
 }

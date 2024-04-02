@@ -41,7 +41,12 @@ namespace design_pattern_project
 
         public IObject clone()
         {
-            return new Folder(Name);
+            Folder cloneFolder = new Folder(Name);
+            foreach (var e in _elements)
+            {
+                cloneFolder.Add(e.clone());
+            }
+            return cloneFolder;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using design_pattern_project.Observer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -14,9 +15,10 @@ namespace design_pattern_project.State
         {
             _prev = prev;
         }
-        public void ChangeStatus(MyFile file)
+        public void ChangeStatus(MyFile file,User user)
         {
-            Console.WriteLine("Merged already.");
+            file._status = new Draft();
+            file.Detach(user);
         }
 
         public void PrintStatus()

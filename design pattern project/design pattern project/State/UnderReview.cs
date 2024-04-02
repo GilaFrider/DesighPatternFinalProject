@@ -1,4 +1,5 @@
-﻿using System;
+﻿using design_pattern_project.Observer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,11 @@ namespace design_pattern_project.State
         {
             _prev = prev;
         }
-        public void ChangeStatus(MyFile file)
+        public void ChangeStatus(MyFile file,User user)
         {
+
             file._status = new ReadyToMerge("UnderReview");
+            file.Notify();
         }
 
         public void PrintStatus()
